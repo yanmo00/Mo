@@ -1,0 +1,45 @@
+/* pages/home.wxss */
+
+
+
+.listTotal{
+  display: flex; 
+  margin-top: 20px;
+}
+
+.list {
+  background-color: #DC443D;
+  width: 110px;
+  height: 40px;
+  margin-left: 10px;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  border: 3rpx solid #faca82;
+  border-radius: 10rpx;
+}
+
+.listName{
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+.notice{
+  display: flex; 
+  align-items: center; /* 垂直居中 */
+  text-align: center;
+}
+
+.item{
+  width: 350px;
+  height: 110px;
+  border: 3rpx solid #b8b8b6;
+  border-radius: 10rpx;
+  margin-left: 10px;
+}
+
+.left-item{
+  display: block;
+}

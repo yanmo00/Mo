@@ -1,0 +1,17 @@
+<view class="table">
+  <!-- 表头 -->
+  <view class="table-row table-header">
+    <view class="table-data">排名</view>
+    <view class="table-data">课程排名</view>
+    <view class="table-data">预约人数</view>
+  </view>
+  <!-- 数据行 -->
+  <view class="table-row" wx:for="{{listData}}" wx:key="unique">
+    <view class="table-data first-place" wx:if="{{index === 0}}">1</view>
+    <view class="table-data second-place" wx:elif="{{index === 1}}">2</view>
+    <view class="table-data third-place" wx:elif="{{index === 2}}">3</view>
+    <view class="table-data {{item.rankColor}}" wx:else>{{index + 1}}</view>
+    <view class="table-data">{{item.coachRank}}</view>
+    <view class="table-data">{{item.appointments}}</view>
+  </view>
+</view>

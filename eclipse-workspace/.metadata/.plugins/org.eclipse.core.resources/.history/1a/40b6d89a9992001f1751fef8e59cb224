@@ -1,0 +1,89 @@
+package test1024;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
+
+
+/**
+ * Servlet implementation class VIPTest
+ */
+@WebServlet("/RegisterServlet")
+public class RegisterServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	private List<VIP> vipList = new ArrayList<>();
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public RegisterServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+    
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+//		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		request.setCharacterEncoding("UTF-8");
+        response.setHeader("Content-Type", "text/html;charset=utf-8");
+
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        String sex = request.getParameter("sex");
+        String phone = request.getParameter("phone");
+        VIP u = new VIP(username,password);
+		vipList.add(u);
+		for (VIP user : vipList) {
+			System.out.println("用户名：" + user.username + "，密码：" + user.password);
+		}
+        PrintWriter out=response.getWriter();
+        out.println("<html>");
+        out.println("<style>");
+        out.println("table {");
+        out.println("    width: 80%;");
+        out.println("    border-collapse: collapse;");
+        out.println("}");
+        out.println("th, td {");
+        out.println("    background-color: #f2f2f2;");
+        out.println("}");
+        out.println("</style>");
+        out.println("<body>");
+        out.println("<table  border=\"1\">");
+        out.println("<tr><th>用户名</th><th>密码</th><th>性别</th><th>手机号</th></tr>");
+		for(VIP user : vipList) {
+			String RegisterUsername = user.username;
+			String RegisterPassword = user.password;
+		    out.println("<tr>");
+		    out.println("<td>"+RegisterUsername+"</td>");
+		    out.println("<td>"+RegisterPassword+"</td>");
+		    out.println("</tr>");
+		}
+		out.println("</table>");
+	    out.println("</body>");
+	    out.println("</html>");
+
+		String linkText = "点击返回";
+        String linkUrl = "register.jsp";
+        out.println("<a href=\"" + linkUrl + "\">" + linkText + "</a>");
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

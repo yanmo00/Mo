@@ -1,0 +1,50 @@
+package mytest;
+
+public class huiyuan {
+	String yonghuming;
+	String mima;
+	String xingbie;
+	String dianhua;
+	public huiyuan(String huiyuan,String mima,String xingbie,String dianhua)
+	{
+		this.yonghuming=yonghuming;
+		this.mima=mima;
+		this.xingbie=xingbie;
+		this.dianhua=dianhua;
+	}
+	public huiyuan()
+	{
+	}
+   public void SetYonghuming(String yonghuming)
+   {
+	   this.yonghuming=yonghuming;
+   }
+   public String GetYonghuming()
+   {
+	   return yonghuming;
+   }
+   public void SetMima(String mima)
+   {
+	   this.mima=mima;
+   }
+   public String GetMima()
+   {
+	   return mima;
+   }
+   public void SetXingbie(String xingbie)
+   {
+	   this.xingbie=xingbie;
+   }
+   public String GetXingbie()
+   {
+	   return xingbie;
+   }
+   public void SetDianhua(String dianhua)
+   {
+	   this.dianhua=dianhua;
+   }
+   public String GetDdianhua()
+   {
+	   return dianhua;
+   }
+}

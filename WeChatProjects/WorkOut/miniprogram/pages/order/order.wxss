@@ -1,0 +1,105 @@
+.coach-container {
+  padding: 15px;
+}
+
+.title {
+  text-align: left;
+  border-bottom: 2px solid red;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.coach-list {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.coach-item {
+  flex: 1;
+  margin: 0 10px; /* 根据需要调整间距 */
+}
+
+.coach-frame {
+  border: 1px solid #fff; /* 白框 */
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.coach-image {
+  width: 80px; /* 根据需要调整图片大小 */
+  height: 90px;
+  margin-bottom: 10px;
+}
+
+.place-name {
+  color: black;
+  font-size: 16px;
+}
+
+.place-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.place-item {
+  margin-bottom: 20px; /* 根据需要调整间距 */
+  width: 100%; /* 根据需要调整宽度 */
+}
+
+.place-frame {
+  display: flex;
+  border: 1px solid #fff; /* 白框 */
+  padding: 10px;
+  align-items: center;
+  width: 100%;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.place-image {
+  width: 200px; /* 根据需要调整图片大小 */
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.place-title {
+  margin-left: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.content {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-left: 10px;
+}
+
+.button {
+  border-radius: 10%;
+  width: 10px;
+  height: 30px;
+  background-color: #ff0505;
+  color: white;
+  vertical-align: center;
+  font-size: 13px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-left: 20px;
+  margin: auto 0;
+}

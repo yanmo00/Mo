@@ -1,0 +1,50 @@
+<!--pages/home.wxml-->
+<view class="container">
+  <view class="page-body">
+    <view class="page-section page-section-spacing swiper">
+      <swiper indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#777682"
+        indicator-active-color="#DC443D">
+          <swiper-item>
+            <image src="../../images/image1.png"style="width:500px" mode=""/>
+          </swiper-item>
+          <swiper-item>
+            <image src="../../images/image2.png" style="width:500px" mode=""/>
+          </swiper-item>
+          <swiper-item>
+            <image src="../../images/image3.png" style="width:500px" mode=""/>
+          </swiper-item>
+      </swiper>
+    </view>
+    <view class="listTotal" >
+      <view class="list" bindtap="navigateToCoachRank">
+        <image src="../../images/trophy.png" style="height: 30px;width: 30px;"/>
+        <p class="listName">教练排名</p>
+      </view>
+      <view class="list">
+        <image src="../../images/house.png" style="height: 30px;width: 30px;"/>
+        <p class="listName" bindtap="navigateToPlaceRank">场地排名</p>
+      </view>
+      <view class="list" bindtap="navigateToCourseRank"> 
+        <image src="../../images/book.png" style="height: 30px;width: 30px;"/>
+        <p class="listName">课程排名</p>
+      </view>
+    </view>
+  </view>
+  <view class="notice">
+      <image src="../../images/notice.png" mode="" style="width: 50px;height: 50px;margin-top: 55px;"/>
+      <p style="margin-top: 55px;color: #DC443D;font-weight: bold;">公告信息</p>
+  </view>
+  <view class="item" wx:for="{{listData}}" wx:key="index">
+    <view class="left-item" style="margin-top: 20px;display: flex;">
+      <view style="background:#DC443D;width: 50px;height:25px;border: 3rpx solid #DC443D;border-radius: 10rpx;display: inline-block;margin-left: 5px;">
+        <p style="color: white;margin-left: 8px;margin-right: 5px;display: inline-block;">置顶</p>
+      </view>
+    <p style="font-weight:bold;display: inline-block;margin-left: 5px;margin-bottom: 25px;">重要通知</p>
+    </view>
+    <p style="margin-left: 8px;margin-top: 5px;">发布时间：{{item.publishTime}}</p>
+    <view class="right-item">
+      <image src="{{item.image}}" style="height: 80px;width: 80px;position: fixed;top: 320px;left: 260px" ></image>
+    </view>
+  </view>
+</view>

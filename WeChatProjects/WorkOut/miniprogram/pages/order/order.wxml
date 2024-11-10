@@ -1,0 +1,33 @@
+<view class="coach-container">
+  <!-- 标题 -->
+  <text class="title">教练</text>
+  <!-- 教练列表 -->
+  <view class="coach-list">
+    <view class="coach-item" wx:for="{{coaches}}" wx:key="unique">
+      <view class="coach-frame">
+        <image class="coach-image" src="{{item.image}}" />
+        <text class="coach-name">{{item.name}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="coach-container">
+  <!-- 标题 -->
+  <text class="title">场地</text>
+  <!-- 场地列表 -->
+  <view class="place-list">
+    <view class="place-item" wx:for="{{places}}" wx:key="unique">
+      <view class="place-frame">
+        <image class="place-image" src="{{item.image}}" />
+        <!-- 标题和内容 -->
+        <view class="info">
+          <text class="place-title">{{item.title}}</text>
+          <text class="content">{{item.content}}</text>
+        </view>
+        <!-- 预约按钮 -->
+        <button class="button">预约</button>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,199 @@
+package mytest;
+import mytest.huiyuan;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class test
+ */
+@WebServlet("/test")
+public class test extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public test() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+    ArrayList<huiyuan> mylist= new ArrayList<huiyuan>();
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		response.setHeader("Content-Type", "text/html;charset=utf-8");
+		PrintWriter out =response.getWriter();
+		out.println("<style type=\"text/css\">\r\n" + 
+				"	.mydiv{\r\n" + 
+				"    margin-top: auto;\r\n" + 
+				"    margin-right: auto;\r\n" + 
+				"    margin-left: auto;\r\n" + 
+				"    margin-bottom: auto;\r\n" + 
+				"    width: 300px;\r\n" + 
+				"    height: 350px;\r\n" + 
+				"    border: 2px  #00BAED;\r\n" + 
+				"    background-color: #FFFFFF;\r\n" + 
+				"    padding-right: 0px;\r\n" + 
+				"    padding-top: 40px;\r\n" + 
+				"    color: #77C1C1;\r\n" + 
+				"    font-style: italic;\r\n" + 
+				"    font-size: large;\r\n" + 
+				"	}\r\n" + 
+				".d0 {\r\n" + 
+				"    margin: auto;\r\n" + 
+				"    background-color: #FFFFFF;\r\n" + 
+				"    width: 400px;\r\n" + 
+				"    padding-top: 30px;\r\n" + 
+				"    background-image: url(beijing2.jpg);\r\n" + 
+				"    height: 450px;\r\n" + 
+				"}\r\n" + 
+				"table {\r\n" + 
+				"    color: #037979;\r\n" + 
+				"}\r\n" + 
+				"</style>");
+		String yhm=request.getParameter("yonghuming");
+		String mm=request.getParameter("mima");
+		String xb=request.getParameter("xingbie");
+		String dh=request.getParameter("dianhua");
+		String myflag=request.getParameter("mk");
+		if( myflag.equals("1"))
+		{
+		  huiyuan myhy=new huiyuan(yhm,mm,xb,dh);
+	      int flag1=0;
+		      for(int i=0;i<=mylist.size()-1;i++)
+		        {
+		           if(mylist.get(i).yonghuming.equals(yhm))
+		            {
+		            	flag1=flag1+1;
+		            	break;
+		            }
+		         }
+		      if(flag1==0)
+				{ mylist.add(myhy);
+				out.println("<div class=\"d0\">\r\n" + 
+						"<div class=\"mydiv\">\r\n" + 
+						"<table algin=\"center\">\r\n" + 
+						"<tr>\r\n" + 
+						"</tr>\r\n");
+				out.println("<br>");
+				out.println("<br>");
+				out.println("<p align='center'>");
+				out.println("注册成功：");
+				out.println("<br>");
+				out.println("----------------------------------");
+				out.println("<br>");
+				out.println("用户名：");
+		    	out.println(mylist.get(mylist.size()-1).yonghuming);
+		    	out.println("<br>");
+		    	out.println("密码：");
+		    	out.println(mylist.get(mylist.size()-1).mima);
+		    	out.println("<br>");
+		    	out.println("性别：");
+		    	out.println(mylist.get(mylist.size()-1).xingbie);
+		    	out.println("<br>");
+		    	out.println("用电话：");
+		    	out.println(mylist.get(mylist.size()-1).dianhua);
+		    	out.println("<br>");
+		    	out.println("----------------------------------");
+		    	out.println("<br>");
+				out.println("<a href='index.jsp'>返回</a>");
+			    out.println("</p>");
+				}
+				else {
+					out.println("<div class=\"d0\">\r\n" + 
+							"<div class=\"mydiv\">\r\n" + 
+							"<table algin=\"center\">\r\n" + 
+							"<tr>\r\n" + 
+							"</tr>\r\n");
+					out.println("<br>");
+					out.println("<br>");
+					out.println("<p align='center'>");
+					out.println("不能重复注册");
+					out.println("<br>");
+					out.println("---------------------------");
+					out.println("<br>");
+					out.println("<a href='index.jsp'>返回</a>");
+					}
+		      out.println("</table>\r\n" + 
+		      		"</div>\r\n" + 
+		      		"</div>");
+	         }
+		if( myflag.equals("2"))
+		{
+			  String yhm1=request.getParameter("yonghuming");
+			  String mm2=request.getParameter("mima");
+			  int flag2=1;
+			  for(int i=0;i<=mylist.size()-1;i++)
+			  {
+				   if(yhm1.equals(mylist.get(i).yonghuming))
+				   {
+					   if(mm2.equals(mylist.get(i).mima))
+					      {
+						     flag2=2;
+					      }
+				   }
+			   }
+			   if(flag2==1)
+			      {
+				   out.println("<div class=\"d0\">\r\n" + 
+							"<div class=\"mydiv\">\r\n" + 
+							"<table algin=\"center\">\r\n" + 
+							"<tr>\r\n" + 
+							"</tr>\r\n");
+					out.println("<br>");
+					out.println("<br>");
+					out.println("<p align='center'>");
+					out.println("登录失败：");
+					out.println("<br>");
+					out.println("-----------------");
+			    	out.println("<br>");
+					out.println("<a style='text-decoration:none;' href='index.jsp'>返回</a>");
+				    out.println("</p>");
+			        out.println("</table>\r\n" + 
+			      		"</div>\r\n" + 
+			      		"</div>");
+			      }
+				      /*out.println("登录失败");
+				      out.println("<a href='index.jsp'>返回</a>");
+			        }*/
+			   if(flag2==2) 
+				   {
+				   out.println("<div class=\"d0\">\r\n" + 
+							"<div class=\"mydiv\">\r\n" + 
+							"<table algin=\"center\">\r\n" + 
+							"<tr>\r\n" + 
+							"</tr>\r\n");
+					out.println("<br>");
+					out.println("<br>");
+					out.println("<p align='center'>");
+					out.println("登录成功：");
+					out.println("<br>");
+					out.println("--------------------");
+					out.println("<br>");
+				      out.println("<a style='text-decoration:none;' href='index.jsp'>返回</a>");
+				        out.println("</table>\r\n" + 
+					      		"</div>\r\n" + 
+					      		"</div>");
+				   }
+		   }
+	    }
+	        
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

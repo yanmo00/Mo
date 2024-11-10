@@ -1,0 +1,54 @@
+{
+	"pages": [
+		"pages/home/home",
+		"pages/course/course",
+		"pages/my/my",
+    "pages/order/order",
+    "pages/coach_rank/coach_rank",
+    "pages/course_rank/course_rank",
+    "pages/place_rank/place_rank"
+	],
+	"window": {
+		"navigationBarTextStyle": "white",
+		"navigationBarBackgroundColor": "#DC443D",
+		"navigationBarTitleText": "首页"
+	},
+	"tabBar": {
+		"custom": false,
+		"backgroundColor": "#FFFFFF",
+		"color": "#595757",
+		"selectedColor": "#DC443D",
+		"list": [
+			{
+				"pagePath": "pages/home/home",
+				"text": "首页",
+				"iconPath": "./images/tabbar/home_unselected.png",
+				"selectedIconPath": "./images/tabbar/home_selected.png"
+			},
+			{
+				"pagePath": "pages/order/order",
+				"text": "预约",
+				"iconPath": "./images/tabbar/order_unselected.png",
+				"selectedIconPath": "./images/tabbar/order_selected.png"
+			},
+			{
+				"pagePath": "pages/course/course",
+				"text": "课程",
+				"iconPath": "./images/tabbar/course_unselected.png",
+				"selectedIconPath": "./images/tabbar/course_selected.png"
+			},
+			{
+				"pagePath": "pages/my/my",
+				"text": "我的",
+				"iconPath": "./images/tabbar/my_unselected.png",
+				"selectedIconPath": "./images/tabbar/my_selected.png"
+			}
+		]
+	},
+	"useExtendedLib": {
+		"weui": true
+	},
+	"style": "v2",
+	"sitemapLocation": "sitemap.json",
+	"lazyCodeLoading": "requiredComponents"
+}

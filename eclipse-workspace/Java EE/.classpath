@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="appClientModule"/>
+	<classpathentry kind="lib" path="/usr/share/java/tomcat10/servlet-api.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

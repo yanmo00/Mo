@@ -1,0 +1,91 @@
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!doctype html>
+<html>
+<head>
+<script type="text/javascript">
+        function validateform() {
+            var username = document.forms["myform"]["yonghuming"].value;
+            var password = document.forms["myform"]["mima"].value;
+            if (username == null || username == "") {
+                alert("用户名密码不能为空");
+                return false;
+            }
+            if(password == null || password == "") {
+            	alert("用户名密码不能为空");
+            	return false;
+            	}
+            return true;
+        }
+    </script>
+
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style type="text/css">
+	.mydiv{
+    margin-top: auto;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: auto;
+    width: 300px;
+    height: 350px;
+    border: 2px  #00BAED;
+    background-color: #FFFFFF;
+    padding-right: 0px;
+    padding-top: 40px;
+    color: #77C1C1;
+    font-style: italic;
+    font-size: large;
+	}
+.d0 {
+    margin: auto;
+    background-color: #FFFFFF;
+    width: 400px;
+    padding-top: 30px;
+    background-image: url(beijing2.jpg);
+    height: 450px;
+}
+</style>
+</head>
+
+<body>
+	<div class="d0">
+<div class="mydiv">
+  <p align="center"><strong><em><a style="color:#006274" href="index.jsp">会 员 系 统</a></em></strong></p>
+  <p align="center">注册</p>
+<table algin="center">
+<form action="test" name="myform" method="post" onsubmit="return validateform()">
+<tr>
+     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用户名：</td>
+     <td><input type="text" name="yonghuming"></td>
+</tr>
+<tr>
+     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;密码：</td>
+     <td><input type="password" name="mima"></td>
+</tr>
+<tr>
+     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;性别：</td>
+     <td>男<input checked type="radio" name="xingbie"  value="男">
+                          女<input type="radio" name="xingbie" value="女"></td>
+</tr>
+<tr>
+     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;电话：</td>
+     <td><input type="text" name="dianhua"></td>
+</tr>
+<tr>
+     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+     <td><input type="hidden" name="mk" value="1" ></td>
+</tr>
+<tr>
+     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="确定"></td>
+     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" value="重置"></td>
+</tr>
+</form>
+</table>
+</div>
+</div>
+</body>
+</html>
+
+

@@ -1,0 +1,42 @@
+package calculator;
+
+import java.io.IOException;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+@WebServlet("/homework0929")
+public class homework0929 extends HttpServlet {
+	
+	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+//		super.doGet(req, resp);
+		resp.setContentType("text/html");
+		String high = req.getParameter("high");
+		String bottom = req.getParameter("bottom");
+		double highDouble = Double.parseDouble(high);
+		double bottomDouble = Double.parseDouble(bottom);
+
+//        req.setAttribute("high", highDouble);
+//        req.setAttribute("bottom", bottomDouble);
+//        req.setAttribute("area", area);
+		
+		Triangle triangle = new Triangle();
+		triangle.setBottom(bottomDouble);
+		triangle.setHigh(highDouble);)
+        req.getRequestDispatcher("TriangleArea.jsp").forward(req, resp);
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+//		super.doPost(req, resp);
+		doGet(req,resp);
+	}
+
+}
